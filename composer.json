@@ -1,0 +1,28 @@
+{
+    "name": "miguel/tienda-blade",
+    "description": "Proyecto Tienda con Blade",
+    "type": "project",
+    "require": {
+        "philo/laravel-blade": "3.1",
+        "milon/barcode": "6.0",
+        "fzaninotto/faker": "1.5",
+	"chillerlan/php-qrcode": "4.3"
+    },
+    "license": "GNU",
+    "autoload": {
+        "psr-4": {
+            "MisClases\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Miguel Suárez Rivero",
+            "email": "miguelsuarezrivero@gmail.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    }
+}
