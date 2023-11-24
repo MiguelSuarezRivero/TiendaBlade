@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoapWsdl.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="MisClases.MetodosSoap" targetNamespace="http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoapWsdl.php">
+  <types>
+    <xsd:schema targetNamespace="http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoapWsdl.php">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </xsd:schema>
+  </types>
+  <portType name="MisClases.MetodosSoapPort">
+    <operation name="getStock">
+      <documentation>Obtiene el Stock de todos los productos.</documentation>
+      <input message="tns:getStockIn"/>
+      <output message="tns:getStockOut"/>
+    </operation>
+  </portType>
+  <binding name="MisClases.MetodosSoapBinding" type="tns:MisClases.MetodosSoapPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getStock">
+      <soap:operation soapAction="http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoapWsdl.php#getStock"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoapWsdl.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoapWsdl.php"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="getStockIn"/>
+  <message name="getStockOut">
+    <part name="return" type="soap-enc:Array"/>
+  </message>
+  <service name="MisClases.MetodosSoapService">
+    <port name="MisClases.MetodosSoapPort" binding="tns:MisClases.MetodosSoapBinding">
+      <soap:address location="http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoapWsdl.php"/>
+    </port>
+  </service>
+</definitions>

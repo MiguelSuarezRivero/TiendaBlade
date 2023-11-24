@@ -27,14 +27,29 @@ class Usuario extends Conexion{
             $sql->bindParam(':pass', $hash_pass, PDO::PARAM_STR);
             $sql->bindParam(':rol', $rol, PDO::PARAM_INT);
             $sql->execute();
+            $this->conexion=null;
             return  $sql->rowCount();
         } catch (PDOException $ex) {
+            $this->conexion=null;
             return 0;
-        }
-       
-        $this->conexion=null;
-
+        }      
     }
+
+    public function eliminarUsuario($nom){
+
+        try {
+            $this->crearConexion();
+            $sql = $this->conexion->prepare("DELETE FROM usuarios WHERE nombre=:nombre"); 
+            $sql->bindParam(':nombre', $nom, PDO::PARAM_STR);
+            $sql->execute();
+            $this->conexion=null;
+            return  $sql->rowCount();
+        } catch (PDOException $ex) {
+            $this->conexion=null;
+            return 0;
+        } 
+    }
+
 
     public function verificaUsuario($nom, $pass){
 
@@ -67,4 +82,12 @@ class Usuario extends Conexion{
 
     }
 
+    public function mostrarUsuarios(){
+        $this->crearConexion();
+        $sql = $this->conexion->prepare("SELECT nombre, rol FROM usuarios ORDER BY rol"); 
+        $sql->execute();
+        $this->conexion = null;
+        return $resultado = $sql->fetchall(PDO::FETCH_OBJ);
+        
+    }
 }

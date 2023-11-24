@@ -4,16 +4,23 @@ require_once '../vendor/autoload.php';
 
 class Util{
 
-  public static function verificaSesion(){
+  public static function verificaConfiguracion(){
    
+    if (!file_exists('../src/Configuracion.php')){
+      header("Location: index.php");
+    }
+  }
+
+  public static function verificaSesion(){
+
     if(!isset($_SESSION['nombre'])){
-      header("Location: acceso.php");
+      header("Location: index.php");
     } 
 
     if(isset($_POST['cerrar_sesion'])){
       unset($_SESSION['cerrar_sesion']);
       unset($_SESSION['nombre']);
-      header("Location: acceso.php");
+      header("Location: index.php");
     } 
   } 
 

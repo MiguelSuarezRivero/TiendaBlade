@@ -3,6 +3,9 @@ session_start();
 require '../vendor/autoload.php';
 use Philo\Blade\Blade;
 use MisClases\Usuario;
+use MisClases\Util;
+
+Util::verificaConfiguracion();
 
 if(isset($_POST['login'])){
     switch ((new Usuario)->verificaUsuario($_POST['nombre'],$_POST['pass'])) {

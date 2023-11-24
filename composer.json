@@ -4,8 +4,8 @@
     "type": "project",
     "require": {
         "philo/laravel-blade": "3.1",
-        "milon/barcode": "6.0",
-        "fzaninotto/faker": "1.5",
+        "php2wsdl/php2wsdl": "^0.7.0",
+        "dhcmediway/wsdl2phpgenerator": "^3.5",
 	"chillerlan/php-qrcode": "4.3"
     },
     "license": "GNU",

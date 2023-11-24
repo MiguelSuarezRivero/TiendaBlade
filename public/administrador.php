@@ -5,6 +5,7 @@ use Philo\Blade\Blade;
 use MisClases\Productos;
 use MisClases\Util;
 
+Util::verificaConfiguracion();
 Util::verificaSesion();
 
 

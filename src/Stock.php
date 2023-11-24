@@ -18,4 +18,13 @@ class Stock{
 
     }
 
+    public static function getStockGeneral(){
+
+        $conexion = (new Conexion())->crearConexion();
+        $sql = $conexion->prepare("SELECT productos.nombre AS nombre, SUM(unidades) AS stock FROM stocks INNER JOIN productos ON stocks.producto=productos.id GROUP by productos.nombre"); 
+        $sql->execute();
+        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+        $conexion=null;
+        return $resultado;
+    }
 }

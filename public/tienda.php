@@ -6,6 +6,7 @@ use MisClases\Productos;
 use MisClases\Cesta;
 use MisClases\Util;
 
+Util::verificaConfiguracion();
 Util::verificaSesion();
 Util::addProductoCesta();
 Util::eliminaProductoCesta();

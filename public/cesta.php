@@ -7,6 +7,7 @@ use MisClases\Cesta;
 use MisClases\Pedidos;
 use MisClases\Util;
 
+Util::verificaConfiguracion();
 Util::verificaSesion();
 Util::vaciarCesta();
 Util::realizarCompra();

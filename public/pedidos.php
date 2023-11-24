@@ -6,6 +6,7 @@ use MisClases\Cesta;
 use MisClases\Pedidos;
 use MisClases\Util;
 
+Util::verificaConfiguracion();
 Util::verificaSesion();
 
 $views = '../views';

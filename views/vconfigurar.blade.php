@@ -30,7 +30,7 @@
 <br>
 <div class="mb-3">
   <label class="form-label">Contraseña de la base de datos</label>
-  <input type="text" class="form-control" name="pass" placeholder="Introduce la contraseña del usuario de la base datos" required>
+  <input type="text" class="form-control" name="pass" placeholder="Introduce la contraseña del usuario de la base datos">
 </div>
 <br>
 <div class="mb-3">
@@ -48,5 +48,6 @@
 <br>
 <p>Al finalizar la instalación tendrás disponible un usuario con perfil de cliente, podrás utilizar este usuario para realizar
     pruebas en la tienda, las compras realizadas por el mismo no afectarán en el stock de los productos. </p>
-<span>Nombre: <code>cliente</code> Contraseña: <code>cliente</code></span>
+<span>Nombre: <code>cliente</code> Contraseña: <code>cliente</code></span>r
+<br><br><br><br>
 @endsection
