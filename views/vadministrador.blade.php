@@ -23,7 +23,7 @@
   <div class="card-body">
     <h5 class="card-title">Administración de usuarios</h5>
     <p class="card-text">Cree elimine o modifique los diferentes perfiles de usuario.</p>
-    <a href="gestion-usuarios.php" class="btn btn-primary">Gestionar usuarios</a>
+    <a href="usuarios.php" class="btn btn-primary">Gestionar usuarios</a>
   </div>
 </div>
 <br>
@@ -34,7 +34,7 @@
   <div class="card-body">
     <h5 class="card-title">Administración de pedidos</h5>
     <p class="card-text">Visualice los diferentes pedidos de los usuarios</p>
-    <a href="gestion-pedidos.php" class="btn btn-primary">Gestionar pedidos</a>
+    <a href="administrar-pedidos.php" class="btn btn-primary">Gestionar pedidos</a>
   </div>
 </div>
 <br>

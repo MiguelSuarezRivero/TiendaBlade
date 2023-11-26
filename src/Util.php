@@ -70,25 +70,75 @@ class Util{
     }
   }
 
-  public static function vaciarCesta(){
-    if(isset($_POST['vaciar'])){
-      unset($_SESSION['cesta']);
-    } 
-  }
 
-  public static function realizarCompra(){
-    if(isset($_POST['comprar'])){
-      Pedidos::crearPedido($_SESSION['nombre'], $_SESSION['cesta']);
-      unset($_SESSION['cesta']);
-      header("Location: tienda.php");
-    } 
-  }
-
-  public static function contadorCesta(){
-    if(isset($_SESSION['cesta'])){
-      return Cesta::getTotalCesta($_SESSION['cesta']);
+  public static function generaDatosRecuperacionCorreo($nombre){
+    $datos = (new Usuario())->getEmail($nombre);
+    if(is_array($datos)){
+      $datos_usuario['nombre'] = $nombre;
+      $datos_usuario['email'] = $datos[0]->email;
+      return $datos_usuario;
     }else{
+      return 0;
+    }
+   
+   
+  }
 
-    } return 0;
+
+  
+
+  public static function restablecePassword(){
+    if(isset($_POST['restablecer'])){
+      $restablecer = (new Usuario)->restablecerPass($_POST['nombre'], $_POST['pass']);
+      header("Location: index.php");
+  }
+  }
+
+  public static function usuariosActivos(){
+    $usuarios = (new Usuario)->mostrarUsuarios();
+    
+    $html= "";
+    foreach($usuarios as $user){
+      $propioUsuario = ($_SESSION['nombre'] == $user->nombre)?"</td><td></td>":"</td><td><a class='btn btn-primary' href='usuarios.php?eliminar=$user->nombre'>Eliminar</a></td>";
+        if(isset($_GET['editar'])){
+            if($_GET['editar'] == $user->nombre){
+                $activo = ($user->activo == 1)?"checked":"";
+                $rol = ($user->rol == 0)?'<option value="0" selected>Administrador</option><option value="1">Cliente</option>':'<option value="0">Administrador</option><option value="1" selected>Cliente</option>';
+                $html .= "<tr><td><input type='hidden' value='$user->nombre' name='nombre'>$user->nombre</td>";
+                $html .= "<td><input type='text' name='email' value='$user->email'></td>";
+                $html .= "<td><select name='rol'>$rol</select></td></td>";
+                $html .= "<td><input type='checkbox' $activo name='activo'>";
+                $html .= $propioUsuario;
+                $html .= "<td><input type='submit' class='btn btn-success' name='guardar' value='Guardar'></td></tr>";
+            }else{
+                $activo = ($user->activo == 1)?"checked":"";
+                $rol = ($user->rol == 0)?'Administrador':'Cliente';
+                $html .= "<tr><td>";
+                $html .= $user->nombre;
+                $html .= "</td><td>";
+                $html .= "$user->email</td><td>";
+                $html .= $rol;
+                $html .= "</td><td><input type='checkbox' disabled $activo name='activo'>";
+                $html .= $propioUsuario;
+                $html .= "<td><a class='btn btn-warning' href='usuarios.php?editar=$user->nombre";
+                $html .= "'>Modificar</a></td></tr>";
+            }
+        }else{
+            $activo = ($user->activo == 1)?"checked":"";
+            $rol = ($user->rol == 0)?'Administrador':'Cliente';
+            $html .= "<tr><td>";
+            $html .= $user->nombre;
+            $html .= "</td><td>";
+            $html .= "$user->email</td><td>";
+            $html .= $rol;
+            $html .= "</td><td><input type='checkbox' disabled $activo name='activo'>";
+            $html .= $propioUsuario;
+            $html .= "<td><a class='btn btn-warning' href='usuarios.php?editar=$user->nombre";
+            $html .= "'>Modificar</a></td></tr>";
+        }
+    }
+
+    return $html;
   }
 }
+

@@ -14,6 +14,11 @@
    
   </div>
   <div class="col-md-2">
+    <label class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control  <?php if(isset($_SESSION['error'])) echo " is-invalid";?>"  name="email" required>
+   
+  </div>
+  <div class="col-md-2">
     <label  class="form-label">Contraseña</label>
     <input type="password" class="form-control <?php if(isset($_SESSION['error'])) echo " is-invalid";?>"  name="pass"  required>
   </div>  

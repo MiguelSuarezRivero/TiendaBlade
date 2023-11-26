@@ -1,7 +1,9 @@
 <?php
+require_once '../vendor/autoload.php';
+use MisClases\Configuracion;
 
 // Establecemos los parámetros que necesita la clase SoapCliente
-$url = "http://localhost/proyectos/Curso%20DSW/TiendaBlade/src/wsdl.xml";
+$url = Configuracion::URI . "../src/wsdl.xml";
 
 try {
     $cliente = new SoapClient($url);

@@ -33,8 +33,8 @@ class Instalador{
 
     public function crearAdministrador(){
         
-        (new Usuario)->crearUsuario(Configuracion::USUARIO_TIENDA, Configuracion::PASS_TIENDA, 0);
-        (new Usuario)->crearUsuario('cliente', 'cliente', 1);
+        (new Usuario)->crearUsuario(Configuracion::USUARIO_TIENDA, Configuracion::PASS_TIENDA, 0, Configuracion::EMAIL);
+        (new Usuario)->crearUsuario('cliente', 'cliente', 1, "");
 
     }
 

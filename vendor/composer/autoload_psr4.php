@@ -23,6 +23,7 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Philo\\Blade\\' => array($vendorDir . '/philo/laravel-blade/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'PHP2WSDL\\' => array($vendorDir . '/php2wsdl/php2wsdl/src'),
     'MisClases\\' => array($baseDir . '/src'),
     'Illuminate\\View\\' => array($vendorDir . '/illuminate/view'),

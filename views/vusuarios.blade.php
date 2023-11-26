@@ -25,7 +25,10 @@
   <thead>
     <tr>
       <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
       <th scope="col">Perfil</th>
+      <th scope="col">Activo</th>
+      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -34,14 +37,17 @@
    
   </tbody>
 </table>
-<i>* No está recomendada la eliminación de clientes, pues lleva consigo la eliminación de su histórico de pedidos.</i>
+</form>
+<i>* Previo a la eliminación de un cliente <span style="<?php if(isset($_SESSION['error'])){echo 'color:red;';unset($_SESSION['error']);} ?>">debe eleminar los pedidos asociados al mismo.</span> No se recomienda la eliminación de los mismos, pues perderá el histórico de transacciones, si quiere cancelar el uso de un usuario es preferible deshabilitarlo.</i>
 <br><br><br>
 <h5><strong>Crear usuario</strong></h5>
+<form action="#" method="post">
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Nombre</th>
       <th scope="col">Contraseña</th>
+      <th scope="col">Email</th>
       <th scope="col">Perfil</th>
       <th scope="col"></th>
     </tr>
@@ -50,11 +56,12 @@
     <tr>
       <td><input type="text" name="nombre" placeholder="Nombre" required></td>
       <td><input type="password" name="pass" placeholder="Contraseña" required></td>
+      <td><input type="email" name="email" placeholder="Correo electrónico" required></td>
       <td><select name="rol">
         <option value="0">Administrador</option>
         <option value="1">Cliente</option>
       </select></td>
-      <td> <input type="submit" class="btn btn-primary" value="Crear usuario" name="crear"></td>
+      <td> <input type="submit" class="btn btn-success" value="Crear usuario" name="crear"></td>
     </tr>
     </tbody>
 </table>

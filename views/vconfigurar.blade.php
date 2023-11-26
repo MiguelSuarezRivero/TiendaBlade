@@ -42,6 +42,10 @@
   <label class="form-label">Contraseña del administrador de la tienda online</label>
   <input type="text" class="form-control" name="pass_tienda" placeholder="Introduce la contraseña del administrador de la tienda online" required>
 </div>
+<div class="mb-3">
+  <label class="form-label">Correo electrónico del administrador</label>
+  <input type="email" class="form-control" name="email" placeholder="Introduce el correo electrónico del administrador" required>
+</div>
 <br>
 <input type="submit" value="Instalar" name="instalar" class="btn btn-primary">
 </form>

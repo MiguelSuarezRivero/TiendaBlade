@@ -31,4 +31,16 @@
 </p>
 			<input type="submit" class="btn btn-primary" name="configurar" value="Iniciar instalador">
 		</form>
+    <br><br>
+    <details>
+  <summary>Mi tienda ya estaba instalada, ¿Por qué veo esta pantalla?</summary>
+  <br>
+  <p>El proceso de instalación aparece por dos motivos:</p>
+  <ul>
+    <li>No se encuentra el fichero <code>src/Configuracion.php</code> en su instalación.</li>
+    <li>No ha sido posible conectarse con la base de datos especificada en el fichero <code>src/Configuracion.php</code></li>
+  </ul>
+  <p>En abmos casos es conveniente que no prosiga con el proceso de instalación y se ponga en <strong>contacto con su administrador</strong>, de lo contrario es posible que los datos existentes queden corruptos.</p>
+</details>
+<br><br>
 @endsection

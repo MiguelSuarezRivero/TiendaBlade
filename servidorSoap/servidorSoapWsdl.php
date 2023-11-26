@@ -1,10 +1,10 @@
 <?php
 // Llamamos al autoload de composer
-require '../vendor/autoload.php';
-
+require_once '../vendor/autoload.php';
+use MisClases\Configuracion;
 // Instanciaomos la clase SoapServer pasando por parámetro el archivo WSDL.
 try {
-    $server = new SoapServer("http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoap.wsdl");
+    $server = new SoapServer(Configuracion::URI . "../servidorSoap/servidorSoap.wsdl");
     $server->setClass('MisClases\MetodosSoap');
     $server->handle();
 } catch (SoapFault $f) {

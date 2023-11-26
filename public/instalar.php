@@ -10,6 +10,8 @@ $pass= $_POST['pass'];
 $host= $_POST['host'];
 $usuario_tienda= $_POST['usuario_tienda'];
 $pass_tienda= $_POST['pass_tienda'];
+$correo = $_POST['email'];
+$baseURI = "http://$_SERVER[HTTP_HOST]" . dirname($_SERVER['REQUEST_URI'])."/";
 $nueva_configuracion = fopen('../src/Configuracion.php', "w+"); 
 fwrite($nueva_configuracion,"<?php
 namespace MisClases;
@@ -22,6 +24,8 @@ class Configuracion{
     const HOST_BBDD = \"$host\";
     const USUARIO_TIENDA = \"$usuario_tienda\";
     const PASS_TIENDA = \"$pass_tienda\";
+    const EMAIL = \"$correo\";
+    const URI = \"$baseURI\";
     
 }"); 
 fclose($nueva_configuracion);

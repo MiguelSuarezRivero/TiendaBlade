@@ -44,6 +44,7 @@ class ComposerStaticInitaf16628b8bcd4660024dd22f38d9ec7f
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'Philo\\Blade\\' => 12,
+            'PHPMailer\\PHPMailer\\' => 20,
             'PHP2WSDL\\' => 9,
         ),
         'M' => 
@@ -135,6 +136,10 @@ class ComposerStaticInitaf16628b8bcd4660024dd22f38d9ec7f
         'Philo\\Blade\\' => 
         array (
             0 => __DIR__ . '/..' . '/philo/laravel-blade/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'PHP2WSDL\\' => 
         array (

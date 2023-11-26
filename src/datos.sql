@@ -210,9 +210,11 @@ INSERT INTO `tiendas` (`id`, `nombre`, `tlf`) VALUES
 --
 
 CREATE TABLE `usuarios` (
-  `nombre` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pass` varchar(65) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `rol` int NOT NULL
+  `nombre` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pass` varchar(65) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rol` int NOT NULL,
+  `activo` int NOT NULL,
+  `email` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 

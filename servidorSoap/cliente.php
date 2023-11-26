@@ -1,10 +1,11 @@
 <?php
-
+require_once '../vendor/autoload.php';
+use MisClases\Configuracion;
 # CLIENTE A IMPLEMENTAR.
 
 // Establecemos los parámetros que necesita la clase SoapCliente
-$url = "http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap/servidorSoap.php";
-$uri = 'http://localhost/proyectos/Curso%20DSW/TiendaBlade/servidorSoap';
+$url = Configuracion::URI . "../servidorSoap/servidorSoap.php";
+$uri = Configuracion::URI . '../servidorSoap';
 
 try {
     $cliente = new SoapClient(null, ['location' => $url, 'uri' => $uri, 'trace'=>true]);

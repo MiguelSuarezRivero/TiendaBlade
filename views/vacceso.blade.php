@@ -21,7 +21,8 @@
   <div class="col-12">
     <button class="btn btn-primary" type="submit" name="login">Acceder</button>
     <br><br>
-    <p>¿No tienes cuenta? <a href="registro.php">Registrate</<a></p>
+    <p>¿No tienes cuenta? <a href="registro.php">Registrate</a></p>
+    <p>¿Has olvidado tu contraseña? <a href="recuperar.php">Pulsa aquí</a> y te ayudamos a recuperarla.</p>
   </div>
 </form>
 <?php unset($_SESSION['error']); ?>

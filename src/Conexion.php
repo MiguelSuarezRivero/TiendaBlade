@@ -28,6 +28,9 @@ class Conexion{
              $this->conexion = new PDO($this->dsn, $this->user, $this->pass);
              $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          } catch (PDOException $ex) {
+            if($ex->getCode() == 1049){
+                header("Location: instalador.php");
+            }
              die("Error en la conexión: mensaje: " . $ex->getMessage());
          }
          return $this->conexion;

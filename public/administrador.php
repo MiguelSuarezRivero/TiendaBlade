@@ -2,12 +2,10 @@
 session_start();
 require '../vendor/autoload.php';
 use Philo\Blade\Blade;
-use MisClases\Productos;
-use MisClases\Util;
+use MisClases\{Productos, Util};
 
 Util::verificaConfiguracion();
 Util::verificaSesion();
-
 
 $views = '../views';
 $cache = '../cache';
